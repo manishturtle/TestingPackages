@@ -1,0 +1,4 @@
+include README.md
+include LICENSE
+recursive-include ecomm_tenant/static *
+recursive-include ecomm_tenant/templates *

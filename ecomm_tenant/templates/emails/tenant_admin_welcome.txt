@@ -1,0 +1,38 @@
+Welcome to {{ tenant_name }}
+
+Hello {{ user.first_name }},
+
+Your tenant has been successfully created in our SaaS ERP system. As the tenant administrator, you have full access to manage your organization's resources.
+
+TENANT DETAILS
+-------------
+Name: {{ tenant_name }}
+URL: {{ tenant_url }}
+{% if tenant.custom_domain %}Custom Domain: {{ tenant.custom_domain }}{% endif %}
+{% if tenant.status == 'trial' %}Trial End Date: {{ tenant.trial_end_date|date:"F j, Y" }}{% endif %}
+
+YOUR ADMIN ACCOUNT
+----------------
+Email: {{ user.email }}
+{% if password %}Password: {{ password }}
+
+IMPORTANT: Please change your password immediately after logging in!{% endif %}
+
+To get started, visit your tenant dashboard at: {{ tenant_url }}/admin/
+
+As a tenant administrator, you can:
+- Manage users and their permissions
+- Configure company settings
+- Access all features of your subscription plan
+- Monitor usage and billing information
+
+If you have any questions or need assistance, please don't hesitate to contact our support team.
+
+Thank you for choosing our platform!
+
+Best regards,
+The SaaS ERP Team
+
+---
+This is an automated message. Please do not reply to this email.
+© {% now "Y" %} SaaS ERP. All rights reserved.

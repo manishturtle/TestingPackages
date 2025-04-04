@@ -1,0 +1,47 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Django: Run Server",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/manage.py",
+            "args": [
+                "runserver"
+            ],
+            "django": true,
+            "justMyCode": true
+        },
+        {
+            "name": "Django: Shell",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/manage.py",
+            "args": [
+                "shell"
+            ],
+            "django": true,
+            "justMyCode": true
+        },
+        {
+            "name": "Django: Test",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/manage.py",
+            "args": [
+                "test",
+                "${input:appName}"
+            ],
+            "django": true,
+            "justMyCode": true
+        }
+    ],
+    "inputs": [
+        {
+            "id": "appName",
+            "type": "promptString",
+            "description": "Enter the app name to test",
+            "default": ""
+        }
+    ]
+}
